@@ -2,6 +2,6 @@
 
 ## PROJECT DESCRIPTION
 
-The followare the process to execute my project
+The following are the process to execute this project
 
 ### SETUP
