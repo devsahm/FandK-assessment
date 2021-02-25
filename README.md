@@ -23,7 +23,7 @@ php artisan key:generate
 ```
 
 
-### Migrate and Seed Database
+### MIGRATE and SEED DATABASE
 
 ```
 php artisan migrate
