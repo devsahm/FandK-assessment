@@ -80,7 +80,7 @@ Sample response (HTTP 201)
 **POST /api/v1/login** - login an existing user 
 
 Request parameters:\
-`email`- email of the already registered user
+`email`- email of the already registered user\
 `password`- user password  
 
 
