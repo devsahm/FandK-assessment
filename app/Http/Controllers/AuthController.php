@@ -6,12 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Validator;
 use App\Models\User;
-use App\Notifications\WelcomeToFandK;
 use App\Mail\WelcomeToOurPlatform;
 use Illuminate\Support\Facades\Mail;
-use App\Notifications\YouAreWelcome;
-use Illuminate\Notifications\Notification;
-use Illuminate\Support\Facades\Auth;
+
 
 class AuthController extends Controller
 {
