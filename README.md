@@ -130,7 +130,7 @@ Sample Response (HTTP 200)
 ```
 
 
-**GET /api/v1/payment/gen_callback** - This endpoint verifies the transaction and returns deposited amount
+**GET /api/v1/payment/gen_callback** - This endpoint verifies the transaction and returns deposited amount \
 **_To access this endpoint, authentication with api token is required_**
 
 Request Parameter \
@@ -157,7 +157,7 @@ Sample Response (HTTP 200)
 
 ```
 
-**POST /api/v1/transfer** - This endpoint transfer funds from authenticated user to another user via username 
+**POST /api/v1/transfer** - This endpoint transfer funds from authenticated user to another user via username \
 **_To access this endpoint, authentication with api token is required_**
 
 Request Parameter \
@@ -186,7 +186,7 @@ Sample Response (HTTP 200)
 ```
 
 
-**POST /api/v1/logout** - Logout endpoint
+**POST /api/v1/logout** - Logout endpoint \
 **_To logout, authentication with api token is required_**
 
 Request Parameter \
