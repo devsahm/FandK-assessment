@@ -2,7 +2,7 @@
 
 ## PROJECT DESCRIPTION
 
-The following are the lists of endpoint and documenentation on how to use them. For the purpose of explanation and simplicity, I have added a `test paystack key` for the project.   
+The following are the lists of endpoint and documentation on how to use them. For the purpose of explanation and simplicity, I have added a `test paystack key` for the project.   
 
 
 ### SETUP
@@ -53,11 +53,13 @@ Request parameters:\
 `username` -a unique username \
 `email` - a valid email \
 `password`- password \
-`password_confirmation` - repeat password 
+`password_confirmation` - confirm password \
+
 
 
 `--header` 'Content-Type: application/json' \
-`-data` '{"username: "samuel", "email":"mail@gmail.com", "password":"pass123", "password_confirmation":"pass123"}'
+`-data` '{"username: "samuel", "email":"mail@gmail.com", "password":"pass123", "password_confirmation":"pass123"}' \
+
 
 
 Sample response (HTTP 201)
@@ -79,7 +81,8 @@ Sample response (HTTP 201)
 
 Request parameters:\
 `email`- email of the already registered user
-`password`- user password
+`password`- user password  \
+
 
 `--header` 'Content-Type: application/json' \
 `-data` '{"email":"mail@gmail.com", "password":"pass123"}'
