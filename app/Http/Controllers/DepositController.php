@@ -48,7 +48,7 @@ class DepositController extends Controller
         $total_amount = $request->amount;
         $callback_url = route('paystackCallback');
         $paymentInitialization = $this->InitiliazePaystackPayment($email, $total_amount, $callback_url, $reference);
-         return  $paymentInitialization;
+        return  $paymentInitialization;
 
      }
 

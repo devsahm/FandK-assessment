@@ -19,7 +19,8 @@ class DepositResource extends JsonResource
         return [
             'id' => $this->id,
             'reference' => $this->paystack_reference,
-            'amount' => $this->amount,
+            'deposited_amount' => $this->amount,
+            'currency'=>'NGN',
             'date'=>$this->created_at->format('d M Y')
         ];
     }
