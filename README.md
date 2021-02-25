@@ -2,10 +2,11 @@
 
 ## PROJECT DESCRIPTION
 
-The following are the process to execute this project. For the purpose of explanation, I have added a `test paystack key` in the project. 
+The following are the lists of endpoint and documenentation on how to use them. For the purpose of explanation and simplicity, I have added a `test paystack key` for the project.   
+
 
 ### SETUP
-Clone the from github, `cd` into the project root folder and install or update composer
+Clone the from github, `cd` into the project root folder and run `composer install` or `composer update`
 
 ```
 git clone https://github.com/devsahm/FandK-assessment.git
@@ -13,12 +14,37 @@ git clone https://github.com/devsahm/FandK-assessment.git
 composer install
 ```
 
+### SETUP DATABASE AND GENERATE KEY
+Rename the `.env.example` to `.env`, setup your database and add the appropriate database name in your env file. Next, generate a new app key.
+
+```
+php artisan key:generate
+
+```
+
+
 ### Migrate and Seed Database
 
 ```
 php artisan migrate
 php artisan db:seed
 ```
+
+### MAILING
+The project uses a third party `mail trap to send mail`. Kindly setup a mail trap account and update the `.env` file with the appropriate mail trap credentials.
+
+```
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.mailtrap.io
+MAIL_PORT=2525
+MAIL_USERNAME=**************
+MAIL_PASSWORD=**************
+MAIL_ENCRYPTION=null
+MAIL_FROM_ADDRESS=***********
+
+```
+
+
 ### Task
 
 **POST /api/v1/register** - register a new user and send a welcome email to user
@@ -29,10 +55,9 @@ Request parameters:\
 `password`- password \
 `password_confirmation` - repeat password 
 
-`--url` /api/v1/register \
-`--header` 'Accept: application/json' \
+
 `--header` 'Content-Type: application/json' \
- `--data` '{"username":samuel ,"email":mail@email.com, "password":pass123, "password_confirmation":pass123}' 
+`-data` '{"username: "samuel", "email":"mail@gmail.com", "password":"pass123", "password_confirmation":"pass123"}'
 
 
 Sample response (HTTP 201)
@@ -50,11 +75,15 @@ Sample response (HTTP 201)
 }
 ```
 
-**POST /api/v1/login** - login an existing user to authenticate 
+**POST /api/v1/login** - login an existing user 
 
 Request parameters:\
 `email`- email of the already registered user
 `password`- user password
+
+`--header` 'Content-Type: application/json' \
+`-data` '{"email":"mail@gmail.com", "password":"pass123"}'
+
 
 Sample response (HTTP 200)
 ```
@@ -76,7 +105,7 @@ Sample response (HTTP 200)
 ```
 
 **POST /api/v1/deposit** - This endpoint return paystack authorization_url for payment
-**_TO access this endpoint, authentication with api token is required_**
+**_To access this endpoint, authentication with api token is required_**
 
 Request Parameter \
 `amount` -The  amount to be deposited \
@@ -102,7 +131,7 @@ Sample Response (HTTP 200)
 
 
 **GET /api/v1/payment/gen_callback** - This endpoint verifies the transaction and returns deposited amount
-**_TO access this endpoint, authentication with api token is required_**
+**_To access this endpoint, authentication with api token is required_**
 
 Request Parameter \
 `reference` - The reference from paystack \
@@ -129,7 +158,7 @@ Sample Response (HTTP 200)
 ```
 
 **POST /api/v1/transfer** - This endpoint transfer funds from authenticated user to another user via username 
-**_TO access this endpoint, authentication with api token is required_**
+**_To access this endpoint, authentication with api token is required_**
 
 Request Parameter \
 `amount` -The  amount to be transfered \
@@ -157,5 +186,23 @@ Sample Response (HTTP 200)
 ```
 
 
+**POST /api/v1/logout** - Logout endpoint
+**_To logout, authentication with api token is required_**
 
+Request Parameter \
+`token` - Access token 
+
+`--header` "Authorization: Bearer `ACCESS TOKEN`" \
+`--header` "Content-Type: application/json" 
+
+Sample Response (HTTP 200)
+```
+{
+    "message": "User successfully signed out"
+}
+
+```
+
+### CONCLUSION
+Thanks for reviewing my code. It will be a great privilege if given the opportunity to join your great team. I look forward to hearing fro you as soon. Thanks so much
 
