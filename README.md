@@ -2,7 +2,7 @@
 
 ## PROJECT DESCRIPTION
 
-The following are the lists of endpoint and documentation on how to use them. For the purpose of explanation and simplicity, I have added a `test paystack key` for the project.   
+The following are the lists of endpoint and explanation on how to use them. For the purpose of explanation and simplicity, I have added a `test paystack key` for the project.   
 
 
 ### SETUP
