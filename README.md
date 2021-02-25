@@ -153,7 +153,7 @@ Sample Response (HTTP 200)
     "data": {
         "id": 3,
         "paystack_reference": "16142897525672378J0b9",
-        "deposited_amount": 20,
+        "deposited_amount": 20000,
         "currency":"NGN",
         "date": "25 Feb 2021"
     },
@@ -180,7 +180,7 @@ Sample Response (HTTP 200)
 {
     "data": {
         "id": 1,
-        "amount": "9000",
+        "amount": "200",
         "transfer_from": "samuel",
         "transfer_to": "dammy",
         "date": "25 Feb 2021"
