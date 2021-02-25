@@ -107,7 +107,7 @@ Sample response (HTTP 200)
 
 ```
 
-**POST /api/v1/deposit** - This endpoint return paystack authorization_url for payment
+**POST /api/v1/deposit** - This endpoint return paystack authorization_url for payment \
 **_To access this endpoint, authentication with api token is required_**
 
 Request Parameter \
@@ -151,7 +151,7 @@ Sample Response (HTTP 200)
         "id": 3,
         "paystack_reference": "16142897525672378J0b9",
         "deposited_amount": 20,
-        "currency":NGN,
+        "currency":"NGN",
         "date": "25 Feb 2021"
     },
     "status": true,
