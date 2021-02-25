@@ -53,12 +53,12 @@ Request parameters:\
 `username` -a unique username \
 `email` - a valid email \
 `password`- password \
-`password_confirmation` - confirm password \
+`password_confirmation` - confirm password 
 
 
 
 `--header` 'Content-Type: application/json' \
-`-data` '{"username: "samuel", "email":"mail@gmail.com", "password":"pass123", "password_confirmation":"pass123"}' \
+`-data` '{"username: "samuel", "email":"mail@gmail.com", "password":"pass123", "password_confirmation":"pass123"}' 
 
 
 
@@ -81,7 +81,7 @@ Sample response (HTTP 201)
 
 Request parameters:\
 `email`- email of the already registered user
-`password`- user password  \
+`password`- user password  
 
 
 `--header` 'Content-Type: application/json' \
