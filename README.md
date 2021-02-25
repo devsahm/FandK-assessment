@@ -207,5 +207,5 @@ Sample Response (HTTP 200)
 ```
 
 ### CONCLUSION
-Thanks for reviewing my code. It will be a great privilege if given the opportunity to join your great team. I look forward to hearing fro you as soon. Thanks so much
+Thanks for reviewing my code. It will be a great privilege if given the opportunity to join your great team. I look forward to hearing fro you soon. Thanks so much
 
