@@ -43,8 +43,6 @@ MAIL_ENCRYPTION=null
 MAIL_FROM_ADDRESS=***********
 
 
-php artisan queue:work
-
 ```
 
 
