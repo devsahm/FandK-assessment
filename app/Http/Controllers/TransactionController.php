@@ -10,7 +10,6 @@ use App\Models\Wallet;
 use App\Models\Withdraw;
 use App\Http\Resources\TransferResource;
 use Illuminate\Support\Facades\DB;
-use Throwable;
 
 class TransactionController extends Controller
 {
@@ -21,6 +20,7 @@ class TransactionController extends Controller
 
     public function transferFunds(Request $request)
     {
+        //Validate request
         $validator= Validator::make($request->all(), [
             'amount'=>'required',
             'username'=> 'required|exists:users,username'
@@ -42,6 +42,7 @@ class TransactionController extends Controller
                'message'=>'insufficient funds'
            ], 400);
          }
+
          //check if the username is the same as the authenticated username
          if ($request->username == $user->username) {
             return response()->json([
@@ -49,7 +50,6 @@ class TransactionController extends Controller
                 'message'=>'You cannot use your username for this request'
             ], 400);
          }
-
 
 
          try{
@@ -61,7 +61,7 @@ class TransactionController extends Controller
             DB::table('wallets')->where('user_id', $user->id)->update(['balance' => $sender_balance]);
 
 
-            //Add withdrawl record for sender
+            //Add withdraw record for sender
             $withdraw=Withdraw::create([
                'amount'=>$amount,
             ]);

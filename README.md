@@ -31,7 +31,7 @@ php artisan db:seed
 ```
 
 ### MAILING
-The project uses a third party `mail trap to send mail`. Kindly setup a mail trap account and update the `.env` file with the appropriate mail trap credentials. All emails are queued. You will need to run `php artisan queue:work` to trigger all queues on the app.
+The project uses a third party `mail trap to send mail`. Kindly setup a mail trap account and update the `.env` file with the appropriate mail trap credentials. All emails are queued. You will need to run `php artisan queue:work` to trigger all queues on the app. In the `.env` change `QUEUE_CONNECTION=sync` to `QUEUE_CONNECTION=database` to all the database as queue driver.
 
 ```
 MAIL_MAILER=smtp
