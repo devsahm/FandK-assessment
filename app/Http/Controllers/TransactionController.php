@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TransferFundRequest;
 use Validator;
 use Illuminate\Http\Request;
 use App\Models\Transfer;
@@ -18,19 +19,8 @@ class TransactionController extends Controller
     }
 
 
-    public function transferFunds(Request $request)
+    public function transferFunds(TransferFundRequest $request)
     {
-        //Validate request
-        $validator= Validator::make($request->all(), [
-            'amount'=>'required',
-            'username'=> 'required|exists:users,username'
-        ]);
-
-
-        if ($validator->fails()) {
-          return response()->json($validator->errors(), 422);
-        }
-
         $receiver_username= $request->username;
         //check if user have enough balance in the wallet to process the transfer
         $user= auth()->user();
@@ -50,7 +40,6 @@ class TransactionController extends Controller
                 'message'=>'You cannot use your username for this request'
             ], 400);
          }
-
 
          try{
 
