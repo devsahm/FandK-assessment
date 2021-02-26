@@ -117,6 +117,7 @@ Request Parameter \
 
 `--header` "Authorization: Bearer `ACCESS TOKEN`" \
 `--header` "Content-Type: application/json" \
+`--header` "Accept: application/json" \
 `-data` '{"amount: "20000" }' 
 
 Sample Response (HTTP 200)

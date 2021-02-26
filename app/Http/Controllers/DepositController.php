@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\DepositRequest;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Resources\DepositResource;
 use App\Models\Deposit;
@@ -28,15 +29,8 @@ class DepositController extends Controller
 
     }
 
-     public function  depositFunds(Request $request)
+     public function  depositFunds(DepositRequest $request)
      {
-        $validator=Validator::make($request->all(), [
-            'amount'=> 'required|numeric'
-        ]);
-
-        if ( $validator->fails()) {
-            return response()->json($validator->errors(), 422);
-        }
 
         $user= auth()->user();
         $chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
